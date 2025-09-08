@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteOuter.master.cs" Inherits="FlexiloadClient.SiteOuter" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-extended.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+        .btn {
+            border-color: #F6F6F6;
+            background-color: #7C93A0;
+            color: white;
+        }
+        .btn:hover {
+            border-color: #7C93A0;
+            background-color: whitesmoke;
+            color: #7C93A0;
+        }
+
+        #btnLogin:hover {
+            border-color: #7C93A0;
+            background-color: #EEEEEE;
+            color: #7C93A0;
+        }
+        .img-rounded {
+            border-radius:35pt
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color: #7C93A0">
+    <form id="form1" runat="server">
+        <div class="container">
+            <div style="height: 5px"></div>
+            <div class="row">
+                <div class="col-md-7"></div>
+                <div class="col-md-3"><span style="color: white">Last Update: 22 Sep 2015</span></div>
+                <div class="col-md-2">
+                    <!-- Trigger the modal with a button -->
+                    <button type="button" class="btn" data-toggle="modal" data-target="#myModal" title="Login">
+                        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog modal-sm">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Submit your Login Info</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-inline">
+                                        <label for="tbUsername" class="control-label">Username</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1"><i aria-hidden="true" class="glyphicon glyphicon-user"></i></span>
+                                            <asp:TextBox ID="tbUsername" runat="server" class="form-control"
+                                                placeholder="input Username" ValidationGroup="v1"
+                                                required="" MaxLength="25" data-minlength="5" aria-describedby="basic-addon1"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="form-inline">
+                                        <label for="tbPassword" class="control-label">Password</label>
+                                        <div class=" input-group input">
+                                            <span class="input-group-addon" id="basic-addon2"><i aria-hidden="true" class="glyphicon glyphicon-lock"></i></span>
+                                            <asp:TextBox ID="tbPassword" runat="server"
+                                                class="form-control" placeholder="input Password"
+                                                TextMode="Password" required="" ValidationGroup="v1"
+                                                MaxLength="25" aria-describedby="basic-addon2"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true">CLOSE</span>
+                                    </button>
+                                    <asp:LinkButton ID="btnLogin" runat="server" CssClass="btn btn-primary" OnClick="btnLogin_Click">
+                                        <i aria-hidden="true" class="glyphicon glyphicon-log-in"></i> LOGIN
+                                    </asp:LinkButton>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <img class="img-rounded img-responsive" src="images/iphone-1.png" />
+                </div>
+                <div class="col-lg-4" style="color: white; text-align: center">
+                    <div class="height-40"></div>
+                    <h3>Akash Refill Center</h3>
+                    <h4>আকাশ রিফিল সেন্টার</h4>
+                    <br />
+                    <br />
+                </div>
+                <div class="col-lg-4">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

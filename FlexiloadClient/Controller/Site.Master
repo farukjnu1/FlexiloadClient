@@ -1,0 +1,121 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="FlexiloadClient.Controller.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Akash Tech.</title>
+    <link runat="server" rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <link runat="server" rel="icon" href="~/favicon.ico" type="image/ico" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-extended.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../Scripts/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript">
+        $(function () {
+            $(".dropdown").hover(
+                    function () {
+                        $('.dropdown-menu', this).stop(true, true).fadeIn("fast");
+                        $(this).toggleClass('open');
+                        $('b', this).toggleClass("caret caret-up");
+                    },
+                    function () {
+                        $('.dropdown-menu', this).stop(true, true).fadeOut("fast");
+                        $(this).toggleClass('open');
+                        $('b', this).toggleClass("caret caret-up");
+                    });
+        });
+    </script>
+    <style type="text/css">
+        .caret-up {
+            width: 0;
+            height: 0;
+            border-left: 4px solid rgba(0, 0, 0, 0);
+            border-right: 4px solid rgba(0, 0, 0, 0);
+            border-bottom: 4px solid;
+            display: inline-block;
+            margin-left: 2px;
+            vertical-align: middle;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="row">
+            <nav class="navbar navbar-default" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a href="#">&nbsp; &nbsp;</a>
+                </div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="../logo.png" height="25px" class="img-rounded" />
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class=" dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-th-list"></i>&nbsp;Flexiload<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../Controller/RefillMany.aspx"><img src="../images/my-gp-logo.png" height="20px" />&nbsp;Bulk Refill GP</a></li>
+                                <li><a href="../Controller/RefillManyB.aspx"><img src="../images/Banglalink_logo.png" height="20px" />&nbsp;Bulk Refill BL</a></li>
+                                <li><a href="../Controller/home.aspx"><i class="glyphicon glyphicon-th-large"></i>&nbsp;Single Refill</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-edit"></i>&nbsp;FlexiPlan<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../Controller/FlexiPlan.aspx"><i class="glyphicon glyphicon-pencil"></i>&nbsp;Plan</a></li>
+                                <li><a href="../Controller/FlexiplanReport.aspx"><i class="glyphicon glyphicon-book"></i>&nbsp;Flexiplan Report</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-align-justify"></i>&nbsp;Pending List<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../Controller/myPending.aspx"><i class="glyphicon glyphicon-list"></i>&nbsp;My Pending</a></li>
+                                <li><a href="../Controller/Pending.aspx"><i class="glyphicon glyphicon-trash"></i>&nbsp;Clear Pending</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-menu-hamburger"></i>&nbsp;Menu<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../Controller/balanceInquiry.aspx"><i class="glyphicon glyphicon-inbox"></i>&nbsp;Inbox</a></li>
+                                <li class="divider"></li>
+                                <li><a href="../Controller/transactionReport.aspx"><i class="glyphicon glyphicon-book"></i>&nbsp;Transaction Report</a></li>
+                                <li><a href="../Controller/balanceTransfer.aspx"><i class="glyphicon glyphicon-send"></i>&nbsp;Balance Transfer</a></li>
+                                <li><a href="../Controller/userCreate.aspx"><i class="glyphicon glyphicon-user"></i>&nbsp;User Create</a></li>
+                                <li><a href="../Controller/SetNextRefill.aspx"><i class="glyphicon glyphicon-calendar"></i>&nbsp;Set Next Refill</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../Controller/refillDetail.aspx"><i class="glyphicon glyphicon-list-alt"></i>&nbsp;Refill Details</a></li>
+                        <li><a href="../Controller/passwordChange.aspx"><i class="glyphicon glyphicon-lock"></i>&nbsp;Change Password?</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">
+                            <asp:Label ID="lblUsername" runat="server" ForeColor="DarkCyan"></asp:Label></a></li>
+                        <li>
+                            <asp:LinkButton ID="lBtnSingOut" runat="server" OnClick="lBtnSingOut_Click">LogOut</asp:LinkButton></li>
+                        <li>&nbsp; &nbsp;</li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
